@@ -14,7 +14,8 @@ module.exports = State.extend(JIDMixin, {
         extensions: ['array', true],
         chatStatesReceived: 'boolean',
         chatStatesSent: 'boolean',
-        passwordRequired: 'boolean'
+        passwordRequired: 'boolean',
+        resolved: 'boolean'
     },
 
     derived: {
