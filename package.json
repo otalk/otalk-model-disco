@@ -1,0 +1,34 @@
+{
+  "name": "otalk-model-disco",
+  "description": "Model for Otalk XMPP service discovery information",
+  "version": "1.0.0",
+  "author": "Lance Stout <lance@andyet.net>",
+  "bugs": {
+    "url": "https://github.com/otalk/otalk-model-disco/issues"
+  },
+  "dependencies": {
+    "ampersand-jid-datatype-mixin": "^1.0.0",
+    "ampersand-state": "^4.3.9",
+    "underscore": "^1.6.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.5.4",
+    "precommit-hook": "^1.0.7",
+    "tape": "^2.14.0",
+    "tap-spec": "^0.2.1"
+  },
+  "homepage": "https://github.com/otalk/otalk-model-disco",
+  "keywords": [
+    "otalk",
+    "xmpp"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/otalk/otalk-model-disco"
+  },
+  "scripts": {
+    "test": "node test | tap-spec"
+  }
+}
