@@ -8,8 +8,7 @@
   },
   "dependencies": {
     "ampersand-jid-datatype-mixin": "^1.0.0",
-    "ampersand-state": "^4.3.9",
-    "underscore": "^1.6.0"
+    "ampersand-state": "^4.3.9"
   },
   "devDependencies": {
     "jshint": "^2.5.4",
