@@ -4,7 +4,7 @@ var JIDMixin = require('ampersand-jid-datatype-mixin');
 
 module.exports = State.extend({dataTypes: JIDMixin.dataTypes}, {
     props: {
-        jid: 'JID',
+        jid: 'jid',
         name: 'string',
         node: 'string',
         ver: 'string',
