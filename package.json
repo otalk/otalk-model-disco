@@ -1,7 +1,7 @@
 {
   "name": "otalk-model-disco",
   "description": "Model for Otalk XMPP service discovery information",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Lance Stout <lance@andyet.net>",
   "bugs": {
     "url": "https://github.com/otalk/otalk-model-disco/issues"
