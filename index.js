@@ -12,10 +12,17 @@ module.exports = State.extend({dataTypes: JIDMixin.dataTypes}, {
         features: ['array', true],
         identities: ['array', true],
         extensions: ['array', true],
+        resolved: 'boolean'
+    },
+
+    session: {
+        jingleSessionReceived: 'boolean',
+        jingleMediaSessionReceived: 'boolean',
         chatStatesReceived: 'boolean',
         chatStatesSent: 'boolean',
-        passwordRequired: 'boolean',
-        resolved: 'boolean'
+        rttReceived: 'boolean',
+        rttSent: 'boolean',
+        passwordRequired: 'boolean'
     },
 
     derived: {
@@ -93,18 +100,25 @@ module.exports = State.extend({dataTypes: JIDMixin.dataTypes}, {
         supportsRTT: {
             deps: ['features'],
             fn: function () {
-                return this.findFeature('urn:xmpp:rtt:0');
+                return this.rttReceived ||
+                       this.findFeature('urn:xmpp:rtt:0') ||
+                       !this.rttSent;
             }
         },
         supportsJingle: {
             deps: ['features'],
             fn: function () {
-                return this.findFeature('urn:xmpp:jingle:1');
+                return this.jingleSessionReceived ||
+                       this.findFeature('urn:xmpp:jingle:1');
             }
         },
         supportsJingleMedia: {
             deps: ['features', 'supportsJingle'],
             fn: function () {
+                if (this.jingleMediaSessionReceived) {
+                    return true;
+                }
+
                 if (!this.supportsJingle) {
                     return false;
                 }
